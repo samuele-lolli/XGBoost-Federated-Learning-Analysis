@@ -1,0 +1,5 @@
+/README.md
+/__pycache__
+/current_run_config.json
+/outputs*
+/venv
