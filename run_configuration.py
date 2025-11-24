@@ -3,6 +3,9 @@ from typing import Any, Dict, List
 # Defines the different experimental scenarios to be run.
 # Each dictionary represents a unique experiment configuration that overrides BASE_CONFIG.
 scenarios: List[Dict[str, Any]] = [
+    # ==========================================================
+    # --- Full Participation (fraction_train = 1.0) ---
+    # ==========================================================
     {
         "scenario_name": "XGBoost_Bagging_IID",
         "train-method": "bagging",
@@ -24,17 +27,56 @@ scenarios: List[Dict[str, Any]] = [
         "scenario_name": "XGBoost_Cyclic_IID",
         "train-method": "cyclic",
         "partitioner-type": "uniform",
+        "local-epochs": 8,
     },
     {
         "scenario_name": "XGBoost_Cyclic_nonIID_a0_4",
         "train-method": "cyclic",
         "partitioner-type": "dirichlet",
         "dirichlet-alpha": 0.4,
+        "local-epochs": 8,
     },
     {
         "scenario_name": "XGBoost_Cyclic_nonIID_a0_8",
         "train-method": "cyclic",
         "partitioner-type": "dirichlet",
         "dirichlet-alpha": 0.8,
+        "local-epochs": 8,
+    },
+
+    # ==========================================================
+    # --- Partial Participation (fraction_train = 0.8) ---
+    # ==========================================================
+    {
+        "scenario_name": "XGBoost_Bagging_nonIID_a0_4_frac08",
+        "train-method": "bagging",
+        "partitioner-type": "dirichlet",
+        "dirichlet-alpha": 0.4,
+        "fraction-train": 0.8,
+    },
+    {
+        "scenario_name": "XGBoost_Bagging_nonIID_a0_8_frac08",
+        "train-method": "bagging",
+        "partitioner-type": "dirichlet",
+        "dirichlet-alpha": 0.8,
+        "fraction-train": 0.8,
+    },
+
+    # ==========================================================
+    # --- Partial Participation (fraction_train = 0.7) ---
+    # ==========================================================
+    {
+        "scenario_name": "XGBoost_Bagging_nonIID_a0_4_frac07",
+        "train-method": "bagging",
+        "partitioner-type": "dirichlet",
+        "dirichlet-alpha": 0.4,
+        "fraction-train": 0.7,
+    },
+    {
+        "scenario_name": "XGBoost_Bagging_nonIID_a0_8_frac07",
+        "train-method": "bagging",
+        "partitioner-type": "dirichlet",
+        "dirichlet-alpha": 0.8,
+        "fraction-train": 0.7,
     },
 ]

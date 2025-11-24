@@ -38,7 +38,6 @@ BASE_CONFIG: Dict[str, Any] = {
 }
 
 def run_experiment(config: Dict[str, Any]) -> bool:
-    """Writes the configuration to a file and executes a single Flower simulation run."""
     scenario_name = config.get("scenario_name", "Unnamed")
     print("-" * 50)
     print(f"RUNNING: {scenario_name} (Seed: {config['seed']})")
