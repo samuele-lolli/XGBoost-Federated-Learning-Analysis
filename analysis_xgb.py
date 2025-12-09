@@ -186,7 +186,7 @@ def generate_standard_plot(df: pd.DataFrame, plot_def: dict, baseline_df: pd.Dat
                     ax.fill_between(agg.index, agg['mean'] - agg['std'], agg['mean'] + agg['std'], color='black', alpha=0.1)
                     baseline_plotted = True
             except Exception as e:
-                print(f"   🔥 Error plotting baseline metric {col}: {e}")
+                print(f"Error plotting baseline metric {col}: {e}")
         
         if baseline_plotted:
             line = plt.Line2D([0], [0], **baseline_args)
@@ -209,7 +209,7 @@ def generate_standard_plot(df: pd.DataFrame, plot_def: dict, baseline_df: pd.Dat
                     ax.fill_between(agg.index, agg['mean'] - agg['std'], agg['mean'] + agg['std'], color=color, alpha=0.1)
                     plotted_this_scenario = True
             except Exception as e:
-                print(f"   🔥 Error plotting metric {col} for {name}: {e}")
+                print(f"Error plotting metric {col} for {name}: {e}")
                 traceback.print_exc()
 
         if plotted_this_scenario:
@@ -343,7 +343,7 @@ if __name__ == "__main__":
                          baseline_data = baseline_data[baseline_data[key].astype(str) == str(filter_val)]
 
                 if baseline_data.empty:
-                     print("   ⚠️ Full Participation Baseline (Fed-Bagging) data not found.")
+                     print("Full Participation Baseline (Fed-Bagging) data not found.")
             
             effective_baseline_df = baseline_data if include_full_participation_baseline_flag and baseline_data is not None and not baseline_data.empty else None
 

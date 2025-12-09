@@ -211,7 +211,7 @@ def main():
             filters = table_def.get('filters', {})
             for key, value in filters.items():
                 if key not in filtered_df.columns:
-                    print(f"   ⚠️ Warning: Filter key '{key}' not found. Skipping filter.")
+                    print(f" Warning: Filter key '{key}' not found. Skipping filter.")
                     continue
 
                 if isinstance(value, list):
@@ -248,7 +248,7 @@ def main():
                     else: 
                         filtered_df = filtered_df[filtered_df[key].astype(str) == str(filter_val)]
         except Exception as e:
-            print(f"   🔥 Error during filtering for '{table_def['title']}': {e}")
+            print(f" Error during filtering for '{table_def['title']}': {e}")
             traceback.print_exc()
             continue
 
