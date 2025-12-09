@@ -9,7 +9,7 @@ Il progetto confronta due tecniche di aggregazione specifiche per XGBoost:
 | Aspetto | FedBagging | FedCyclic |
 | :--- | :--- | :--- |
 | **Metodo** | Ensemble di alberi addestrati in parallelo | Raffinamento sequenziale del modello |
-| **Punti di Forza (Risultato)** | Maggiore stabilità in scenari Non-IID  | Convergenza rapida e performance superiore in scenari IID |
+| **Punti di Forza** | Maggiore stabilità in scenari Non-IID  | Convergenza rapida e performance superiore in scenari IID |
 
 ## ⚙️ Installazione e Utilizzo
 
